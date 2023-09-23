@@ -2,8 +2,7 @@
 FROM public.ecr.aws/lambda/provided as builder 
 # Set desired PHP Version
 ARG php_version="8.2.10"
-RUN amazon-linux-extras enable postgresql14 && \
-    yum clean all && \
+RUN yum clean all && \
     yum install -y autoconf \
                 bison \
                 bzip2-devel \
@@ -20,8 +19,7 @@ RUN amazon-linux-extras enable postgresql14 && \
                 zip \
                 re2c \
                 sqlite-devel \
-                oniguruma-devel \
-                postgresql14-devel
+                oniguruma-devel
 
 # Download the PHP source, compile, and install both PHP and Composer
 RUN curl -sL https://github.com/php/php-src/archive/php-${php_version}.tar.gz | tar -xvz && \
