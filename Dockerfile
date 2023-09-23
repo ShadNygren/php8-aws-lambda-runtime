@@ -1,7 +1,7 @@
 #Lambda base image Amazon linux
 FROM public.ecr.aws/lambda/provided as builder 
 # Set desired PHP Version
-ARG php_version="8.0.2"
+ARG php_version="8.2.10"
 RUN yum clean all && \
     yum install -y autoconf \
                 bison \
