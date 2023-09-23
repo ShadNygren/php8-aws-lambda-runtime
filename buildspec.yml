@@ -6,12 +6,8 @@ env:
     IMAGE_TAG: "$IMAGE_TAG"
     AWS_ACCOUNT_ID: "$AWS_ACCOUNT_ID"
     AWS_DEFAULT_REGION: "$AWS_DEFAULT_REGION"
-    DOCKER_RUNTIME_VERSION: "$DOCKER_RUNTIME_VERSION"
 
 phases:
-  install:
-    runtime-versions:
-      docker: $DOCKER_RUNTIME_VERSION
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
